@@ -1,0 +1,28 @@
+<div class="form-group">
+        <label class="col-md-4" >Category</label>
+    <select class="form-control"  >
+        <option value="Drama" >Drama</option>
+        <option value="Fiction">Fiction</option>
+        <option value="Satire">Satire</option>
+    </select>
+  </div>
+<table class="table table-hover">
+    
+    <thead>
+    <tr>
+        <td>Movie Name</td>
+        <td>Movie rating</td>
+        <td>Category</td>
+        
+    </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td>{{ movie.name }}</td>
+            <td>{{ movie.rating }}</td>
+            <td>{{ movie.category }}</td>
+            
+        </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,40 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      {{ title }}
+    </div>
+    <div class="panel-body">
+      <form [formGroup]="angForm" method="POST" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Movie Name</label>
+          <input type="text" class="form-control" formControlName="name" pattern="[A-Za-z]{1,20}" #name />
+        </div>
+        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['name'].errors.required">
+            Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Movie Rating</label>
+          <input type="text" class="form-control" formControlName="price" min="1" max="5" step="0.1" #price />
+        </div>
+        <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['price'].errors.required">
+            Rating is required.
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4" >Category</label>
+        <select class="form-control" formControlName="category" #category >
+            <option value="Drama" >Drama</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Satire">Satire</option>
+        </select>
+      </div>
+          <div class="form-group">
+            <button (click)="addMovie(name.value, price.value, category.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+          </div>
+      </form>
+      
+    </div>
+  </div>
+

@@ -1,0 +1,18 @@
+
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <img width="300" alt="Angular Logo" src="https://www.greyhound.co.za/wp-content/uploads/2018/12/movie.jpg">
+  </div>
+  <h2>Here are some links to help you start: </h2>
+  <ul class="list-group">
+    <li class="list-group-item "><a [routerLink]="['/create']">
+      Add Movie
+    </a></li>
+    <li class="list-group-item"><a [routerLink]="['/index']" >
+      Search Movie By Category
+    </a></li>
+    
+  </ul>
+  <router-outlet></router-outlet>
